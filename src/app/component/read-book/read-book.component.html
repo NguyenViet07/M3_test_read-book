@@ -1,0 +1,8 @@
+<table>
+  <tr *ngFor="let book of books" >
+    <div *ngIf="book.read">
+      <td>{{book.name}}</td>
+      <td><a class="btn btn-primary" [routerLink]="['/list', book.id]" (click)="updateStatus(book.id)" role="button">Đọc Lại</a></td>
+    </div>
+  </tr>
+</table>

@@ -1,0 +1,13 @@
+<table border="1">
+  <tr *ngFor="let book of books" >
+    <div *ngIf="!book.read">
+      <td>{{book.name}}</td>
+      <td><a class="btn btn-primary" [routerLink]="['/list', book.id]" (click)="status(book.id)" role="button">Đã Đọc</a></td>
+    </div>
+  </tr>
+</table>
+<form action="" #formBook = "ngForm" (ngSubmit)="addBook(formBook)">
+  <input type="text" ngModel name="name">
+  <input type="hidden" ngModel name="read">
+  <input type="submit" value="Thêm">
+</form>
